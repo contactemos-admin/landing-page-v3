@@ -1,0 +1,8 @@
+@import '../_variables';
+.custom-snack-bar {
+    background: #fff !important;
+    border-radius: $shape + 1px !important;
+    padding: 0 !important;
+    max-width: 44vw !important;
+    min-height: auto !important;
+}

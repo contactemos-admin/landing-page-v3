@@ -1,0 +1,26 @@
+@import '../variables';
+app-root {
+    .mat-tab-body-content {
+        overflow: hidden;
+    }
+    .mat-tab-group {
+        .mat-tab-header {
+            margin-bottom: rem(15px);
+        }
+        .mat-tab-header-pagination {
+            box-shadow: none !important;
+        }
+        .mat-tab-label {
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s ease-in-out;
+            @media only screen and (max-width: 767px) {
+                font-size: 14px;
+                height: 40px;
+            }
+        }
+        .mat-tab-label-active {
+            color: accent-palette(500);
+        }
+    }
+}

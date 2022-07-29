@@ -1,0 +1,9 @@
+@import '../variables';
+
+html {
+  .mat-datepicker-toggle {
+    .mat-icon-button {
+      color: $link-color !important;
+    }
+  }
+}

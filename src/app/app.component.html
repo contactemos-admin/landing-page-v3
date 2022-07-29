@@ -1,0 +1,12 @@
+<ng-container *ngIf="isMobile else desktop">
+    <app-sidenav [itemActive]="itemActive">
+        <router-outlet></router-outlet>
+    </app-sidenav>
+</ng-container>
+
+<ng-template #desktop>
+    <app-nav [itemActive]="itemActive"></app-nav>
+    <router-outlet></router-outlet>
+
+</ng-template>
+<app-footer></app-footer>

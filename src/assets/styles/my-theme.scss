@@ -1,0 +1,9 @@
+@use '@angular/material' as mat;
+@include mat.core();
+$primary-palette: ( 50: #8ECAE6, 100: #8ECAE6, 200: #8ECAE6, 300: #219EBC, 400: #219EBC, 500: #023047, 600: #023047, 700: #023047, 800: #023047, 900: #023047, contrast: ( 50: black, 100: black, 200: black, 300: white, 400: white, 500: white, 600: white, 700: white, 800: white, 900: white));
+$accent-palette: ( 50: #FFB703, 100: #FFB703, 200: #FFB703, 300: #FFB703, 400: #FFB703, 500: #FFB703, 600: #FB8500, 700: #FB8500, 800: #FB8500, 900: #FB8500, contrast: ( 50: black, 100: black, 200: black, 300: white, 400: white, 500: white, 600: white, 700: white, 800: white, 900: white));
+$my-primary: mat.define-palette($primary-palette);
+$my-accent: mat.define-palette($accent-palette);
+$my-theme: mat.define-light-theme(( color: ( primary: $my-primary, accent: $my-accent)));
+@include mat.core-theme($my-theme);
+@include mat.button-theme($my-theme);

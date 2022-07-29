@@ -1,0 +1,43 @@
+@import '../variables';
+$_shape: 0;
+$_box-shadow: $box-shadow;
+$_padding-h: 36px;
+$_head-bg: #ececec;
+$_head-height: 32px;
+$_head-border: 1px solid #929292;
+app-root {
+    .mat-card {
+        border: $main-border;
+        border-radius: $_shape;
+        font-size: $main-fs;
+        padding: 0;
+        .mat-card-title {
+            border-bottom: $_head-border;
+            background-color: $_head-bg;
+            font-size: 14px;
+            margin: 0;
+            position: relative;
+            padding: rem(22px) rem(36px);
+            text-align: center;
+            &.inner-card-title {
+                padding-bottom: rem(10px);
+                padding-top: rem(10px);
+                text-align: left;
+            }
+            @media only screen and (max-width: 767px) {
+                font-weight: 400;
+            }
+        }
+        .mat-card-content {
+            padding: rem(36px);
+            @media only screen and (max-width: 767px) {
+                padding-left: rem(16px);
+                padding-right: rem(16px);
+            }
+        }
+    }
+}
+
+.mat-card:not([class*='mat-elevation-z']) {
+    box-shadow: $_box-shadow;
+}

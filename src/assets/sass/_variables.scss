@@ -1,0 +1,74 @@
+@import 'mixins';
+$main-palette: ( 50: #8ECAE6, 100: #8ECAE6, 200: #8ECAE6, 300: #219EBC, 400: #219EBC, 500: #023047, 600: #023047, 700: #023047, 800: #023047, 900: #023047, A100: #8ECAE6, A200: #8ECAE6, A400: #023047, A700: #023047, contrast: ( 50: #000000, 100: #000000, 200: #000000, 300: #ffffff, 400: #ffffff, 500: #ffffff, 600: #ffffff, 700: #ffffff, 800: #ffffff, 900: #ffffff, A100: #000000, A200: #000000, A400: #ffffff, A700: #ffffff));
+@function main-palette($key: $main-palette) {
+    @return map-get($main-palette, $key);
+}
+
+@function main-contrast($key: $main-palette) {
+    @return map-get(map-get($main-palette, contrast), $key);
+}
+
+$accent-palette: ( 50: #FFB703, 100: #FFB703, 200: #FFB703, 300: #FFB703, 400: #FFB703, 500: #FFB703, 600: #FB8500, 700: #FB8500, 800: #FB8500, 900: #FB8500, A100: #FFB703, A200: #FFB703, A400: #FB8500, A700: #FB8500, contrast: ( 50: #000000, 100: #000000, 200: #000000, 300: #000000, 400: #000000, 500: #ffffff, 600: #ffffff, 700: #ffffff, 800: #ffffff, 900: #ffffff, A100: #000000, A200: #000000, A400: #000000, A700: #000000));
+@function accent-palette($key: $accent-palette) {
+    @return map-get($accent-palette, $key);
+}
+
+@function accent-contrast($key: $accent-palette) {
+    @return map-get(map-get($accent-palette, contrast), $key);
+}
+
+$gray: #aaaaaa;
+$dark-gray: #5c5c5c;
+$main-color: #424242;
+$error-color: #f44336;
+$success-color: #4bb543;
+$link-color: #151618;
+$container-width: 1500px;
+$main-fs: 13px;
+$main-fw: 400;
+$shape: 6px;
+$main-border: 1px solid #b7b7b7;
+$box-shadow: 3px 3px 9px 1px rgba(1, 2, 2, 0.16);
+$border: 1px solid rgba(#929292, 0.5);
+$nav-height: 72px;
+$footer-height: 72px;
+$paginator-shadow: 3px 6px 9px 1px rgba(1, 2, 2, 0.16);
+$row-border: 1px solid rgba(#000, 0.12);
+@mixin horizontal-scroll($height, $left, $right) {
+    overflow-y: hidden;
+    &::-webkit-scrollbar {
+        height: $height;
+        width: 100%;
+        position: absolute;
+        left: $left;
+        right: $right;
+        top: 100%;
+    }
+}
+
+@mixin vertical-scroll($width) {
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        width: $width;
+        height: 100%;
+        position: absolute;
+        right: 0;
+    }
+}
+
+@mixin custom-scroll {
+    &::-webkit-scrollbar-track {
+        background: #fff;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: rgba(0, 0, 0, 0.15);
+        background-clip: padding-box;
+        border-radius: 12px;
+        border: 10px solid rgba(0, 0, 0, 0);
+        height: 6px;
+        transition: background-color 0.2s ease-in-out;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+}

@@ -1,0 +1,38 @@
+@import '../../../assets/sass/variables';
+
+$_shape: 2px;
+$_shadow: 0 1px 7px 1px rgba(0, 0, 0, 0.26);
+
+html {
+  .mat-menu-panel {
+    min-width: 180px;
+    box-shadow: $_shadow;
+    margin-top: rem(8px);
+    border-radius: $_shape;
+  }
+
+  .user-menu {
+    min-width: 220px;
+    margin-top: rem(16px);
+    left: rem(12px);
+    overflow: visible;
+    position: relative;
+
+    @media only screen and (max-width: 767px) {
+      left: rem(8px);
+    }
+
+    &:before {
+      border-style: solid;
+      border-width: 10px;
+      bottom: 90%;
+      border-color: transparent;
+      border-bottom-color: #fff;
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      left: 87%;
+      transform: translateY(-50%);
+    }
+  }
+}

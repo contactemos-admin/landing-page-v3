@@ -1,0 +1,67 @@
+@import '../variables';
+$_dropdown-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
+0 4px 5px 0 rgba(0, 0, 0, 0.14),
+0 1px 10px 0 rgba(0, 0, 0, 0.12);
+$_item-height: 30px;
+$_border: 1px solid rgba(0 0 0 / 0.04);
+.list-wrapper {
+    display: grid;
+    background: #fff;
+    box-shadow: $_dropdown-shadow;
+    position: absolute;
+    grid-template-columns: 1fr 1fr;
+    width: 150px;
+}
+
+.list-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    >.list-title {
+        grid-column: span 2;
+        margin: 0;
+        font-size: 14px;
+        font-weight: 500;
+        padding: rem(8px) rem(13px);
+        border-bottom: $_border;
+    }
+    >.actions {
+        grid-column: span 2;
+        padding: rem(6px) rem(8px);
+        border-top: $_border;
+        display: grid;
+        grid-template-columns: minmax(min-content, 1fr) minmax(min-content, 1fr);
+        grid-column-gap: 6px;
+        >button {
+            padding: 0;
+            line-height: 15px;
+            height: 30px;
+            width: 60px;
+            min-width: 48px;
+            font-size: 14px;
+        }
+    }
+}
+
+.list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    max-height: 7 * $_item-height;
+    &:not(:first-child) {
+        border-left: 1px solid rgba(0 0 0 / 0.04);
+    }
+    &:hover {
+        overflow-y: auto;
+    }
+    .item {
+        line-height: 2em;
+        padding: rem(4px) rem(12px);
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+        &.active,
+        &:hover {
+            background: rgba(#000, 0.04);
+        }
+    }
+}

@@ -1,0 +1,37 @@
+@import 'variables';
+@import 'helper';
+@import 'theme';
+@import 'material';
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+a {
+    color: $link-color;
+    cursor: pointer;
+}
+
+html,
+body {
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 13px;
+    min-width: 320px;
+    overflow: auto;
+    top: 0 !important;
+    overflow: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Roboto, 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    margin: 0;
+}

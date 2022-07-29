@@ -1,0 +1,116 @@
+@import '../variables';
+$_colors: ( button-base: ( border: #0183f2, color: #fff), accent: ( color: #fff, border: accent-palette(500)), primary: ( color: #fff, border: main-palette(500)), warn: ( color: #fff, border: $error-color));
+$_shape: $shape;
+$_fs: 14px;
+$_fw: $main-fw;
+html {
+    .add-button {
+        color: $link-color;
+        margin-bottom: rem(16px);
+        .plus {
+            font-size: 14px;
+            font-weight: lighter;
+            margin-right: rem(8px);
+        }
+    }
+    .text-center {
+        .mat-button-wrapper {
+            align-items: center;
+            justify-content: center;
+            display: flex;
+        }
+    }
+    .mat-raised-button {
+        .mat-button-wrapper {
+            transition: opacity 0.2s ease-in-out;
+        }
+    }
+    .mat-button-base {
+        &.loading {
+            .mat-button-wrapper {
+                opacity: 0 !important;
+            }
+            pointer-events: none;
+            &:before {
+                content: '';
+                box-sizing: border-box;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 20px;
+                height: 20px;
+                margin-top: -10px;
+                margin-left: -10px;
+                border-radius: 50%;
+                border: 2px solid transparent;
+                border-top-color: #fff;
+                animation: spinner 0.8s linear infinite;
+            }
+        }
+    }
+    .mat-stroked-button {
+        @each $_type,
+        $_color in $_colors {
+            &.mat-#{$_type} {
+                background: #fff;
+                border-color: map-get($_color, border);
+                color: map-get($_color, border);
+            }
+        }
+    }
+    .auth-button {
+        border-width: 1px;
+        border-radius: $_shape;
+        font-size: $_fs;
+        font-weight: $_fw;
+        height: 40px;
+        line-height: 1;
+        padding: rem(12px) rem(14px);
+        transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
+        min-width: 100px;
+        @each $_type,
+        $_color in $_colors {
+            &.mat-#{$_type} {
+                background: transparent;
+                border-color: map-get($_color, border);
+                color: map_get($_color, color);
+                &:hover {
+                    background-color: map-get($_color, border);
+                    color: #fff;
+                }
+            }
+        }
+        &.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+    }
+    .mat-raised-button {
+        &.submit-btn {
+            box-shadow: none !important;
+            font-size: $main-fs;
+            font-weight: 400;
+        }
+    }
+    .mat-fab {
+        box-shadow: 2px 4px 9px 1px rgba(0, 0, 0, 0.38);
+        height: 72px;
+        width: 72px;
+        .mat-button-wrapper {
+            padding: rem(24px) 0;
+        }
+    }
+    .large-btn {
+        padding: rem(10px) rem(8px) !important;
+        font-size: 14px !important;
+        font-weight: 700 !important;
+        height: 56px;
+        width: 100%;
+    }
+}
+
+@keyframes spinner {
+    to {
+        transform: rotate(360deg);
+    }
+}

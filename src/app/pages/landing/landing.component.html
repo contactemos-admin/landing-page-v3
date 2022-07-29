@@ -1,0 +1,126 @@
+<section class="hero">
+    <div class="hero-bg-color">
+        <h1>Podemos ser tu aliado</h1>
+        <div class="btns">
+            <a mat-raised-button color="accent" href="#contactUs">En tu próximo trabajo</a>
+            <a mat-raised-button color="accent" href="#contactUs">En busqueda de talentos</a>
+        </div>
+    </div>
+</section>
+<section class="about-us" id="aboutUs">
+    <div class="about-us-secs">
+        <div class="main-title">
+            <h1>¿Quiénes somos?</h1>
+        </div>
+        <div class="info">
+            <h2>Historia</h2>
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+        </div>
+        <div class="info">
+            <h2>Misión</h2>
+            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci
+                velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem.</p>
+        </div>
+        <div class="info">
+            <h2>Visión</h2>
+            <p>Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel
+                illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+        </div>
+    </div>
+    <div class="about-us-img"></div>
+</section>
+
+<section class="solutions" id="solutions">
+    <div class="main-title">
+        <h1>Nuestras soluciones</h1>
+    </div>
+    <div class="cards-container">
+        <mat-card>
+            <img mat-card-image src="./../../../assets/img/se-icon1.png">
+            <mat-card-content>
+                <h3>Título 1</h3>
+                <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system</p>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <img mat-card-image src="./../../../assets/img/se-icon2.png">
+            <mat-card-content>
+                <h3>Título 2</h3>
+                <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system</p>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <img mat-card-image src="./../../../assets/img/se-icon3.png">
+            <mat-card-content>
+                <h3>Título 3</h3>
+                <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system</p>
+            </mat-card-content>
+        </mat-card>
+        <mat-card>
+            <img mat-card-image src="./../../../assets/img/se-icon4.png">
+            <mat-card-content>
+                <h3>Título 4</h3>
+                <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</section>
+
+<section class="blog" id="blog">
+    <div class="main-title">
+        <h1>Noticias</h1>
+    </div>
+</section>
+<section class="contact-us" id="contactUs">
+    <div class="contact-us-container">
+        <div class="contact-info">
+            <div class="main-title">
+                <h1>Contáctenos</h1>
+            </div>
+            <p>But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure</p>
+            <ul>
+                <li>
+                    <a href="" target="_blank">
+                        <fa-icon [icon]="faFacebook"></fa-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="_blank">
+                        <fa-icon [icon]="faInstagram"></fa-icon>
+                    </a>
+                </li>
+                <li>
+                    <a href="" target="_blank">
+                        <fa-icon [icon]="faLinkedin"></fa-icon>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="contact-form">
+            <form [formGroup]="contactForm">
+                <div class="fields-grid">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput type="text" formControlName="name" required>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Teléfono</mat-label>
+                        <input matInput type="number" formControlName="phone" required>
+                    </mat-form-field>
+                </div>
+                <mat-form-field appearance="fill" style="width: 100%;">
+                    <mat-label>Mensaje</mat-label>
+                    <textarea matInput rows="10" formControlName="message" required></textarea>
+                </mat-form-field>
+                <mat-slide-toggle formControlName="terms">
+                    Acepto los <a (click)="$event.preventDefault(); showTerms();">términos y condiciones</a> del servicio
+                </mat-slide-toggle>
+                <div class="actions">
+                    <button mat-raised-button color="accent" (click)="submit()" [disabled]="contactForm.invalid">
+                        Enviar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

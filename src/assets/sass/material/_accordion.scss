@@ -1,0 +1,18 @@
+@import '../variables';
+
+$_header-bg: #ececec;
+
+.worker-accordion {
+  .mat-expansion-panel {
+    border: $border;
+  }
+
+  .mat-expansion-panel-header {
+    background: $_header-bg;
+    border-radius: 0;
+  }
+
+  .mat-expansion-panel-body {
+    padding-top: rem(10px);
+  }
+}
