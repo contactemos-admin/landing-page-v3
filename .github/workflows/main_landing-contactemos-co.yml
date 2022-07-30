@@ -52,6 +52,9 @@ jobs:
       - name: unzip artifact for deployment
         run: unzip release.zip
 
+      - name: npm install
+        run: npm install
+
       - name: build
         run: ng build
 
