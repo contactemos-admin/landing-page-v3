@@ -52,8 +52,8 @@ jobs:
       - name: unzip artifact for deployment
         run: unzip release.zip
 
-      - name: npm install
-        run: npm install
+      - name: npm install and build
+        run: npm install && ng build
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
