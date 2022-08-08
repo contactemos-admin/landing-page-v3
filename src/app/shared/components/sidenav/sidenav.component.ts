@@ -32,10 +32,10 @@ import { CommonModule } from '@angular/common';
       <a class="menu-item" [ngClass]="{'active': itemActive == 1}" href="#solutions" (click)="drawer.toggle()">Nuestras soluciones</a>
       </mat-list-item>
       <mat-list-item role="listitem">
-      <mat-list-item role="listitem">
       <mat-icon mat-list-icon>contact_page</mat-icon>
       <a class="menu-item" [ngClass]="{'active': itemActive == 3}" href="#contactUs" (click)="drawer.toggle()">Contacto</a>
       </mat-list-item>
+      <mat-list-item role="listitem">
         <mat-icon mat-list-icon>feed</mat-icon>
         <a class="menu-item" [ngClass]="{'active': itemActive == 2}" href="#blog" (click)="drawer.toggle()">Noticias</a>
       </mat-list-item>
