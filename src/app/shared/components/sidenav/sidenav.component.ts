@@ -32,12 +32,12 @@ import { CommonModule } from '@angular/common';
       <a class="menu-item" [ngClass]="{'active': itemActive == 1}" href="#solutions" (click)="drawer.toggle()">Nuestras soluciones</a>
       </mat-list-item>
       <mat-list-item role="listitem">
-      <mat-icon mat-list-icon>feed</mat-icon>
-      <a class="menu-item" [ngClass]="{'active': itemActive == 2}" href="#blog" (click)="drawer.toggle()">Noticias</a>
-      </mat-list-item>
       <mat-list-item role="listitem">
       <mat-icon mat-list-icon>contact_page</mat-icon>
       <a class="menu-item" [ngClass]="{'active': itemActive == 3}" href="#contactUs" (click)="drawer.toggle()">Contacto</a>
+      </mat-list-item>
+        <mat-icon mat-list-icon>feed</mat-icon>
+        <a class="menu-item" [ngClass]="{'active': itemActive == 2}" href="#blog" (click)="drawer.toggle()">Noticias</a>
       </mat-list-item>
       <!-- <mat-divider></mat-divider>
       <mat-list-item role="listitem">
@@ -53,23 +53,23 @@ import { CommonModule } from '@angular/common';
       </mat-list-item> -->
     </mat-list>
     </mat-drawer>
-  
+
     <div class="header-mobile">
         <img [routerLink]="['/']" src="./../../../assets/img/logo.png" alt="Colonia Company">
         <button type="button" mat-button (click)="drawer.toggle()">
             <mat-icon>menu</mat-icon>
         </button>
-        
+
     </div>
 
     <ng-content></ng-content>
-  
+
   </mat-drawer-container>
   `,
   styleUrls: ['./sidenav.component.scss']
 })
 export class SideNavComponent {
-  
+
   @Input() itemActive: number = -1;
   constructor() {}
 
