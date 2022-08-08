@@ -20,10 +20,10 @@ import { MatButtonModule} from '@angular/material/button'
                 <a class="menu-item" [ngClass]="{'active': itemActive == 1}" href="#solutions">Nuestras soluciones</a>
             </li>
             <li>
-                <a class="menu-item" [ngClass]="{'active': itemActive == 2}" href="#blog">Noticias</a>
+              <a class="menu-item" [ngClass]="{'active': itemActive == 3}" href="#contactUs">Contacto</a>
             </li>
             <li>
-                <a class="menu-item" [ngClass]="{'active': itemActive == 3}" href="#contactUs">Contacto</a>
+                <a class="menu-item" [ngClass]="{'active': itemActive == 2}" href="#blog">Noticias</a>
             </li>
         </ul>
         <!-- <ul>
@@ -45,7 +45,7 @@ import { MatButtonModule} from '@angular/material/button'
 export class NavComponent {
 
     @Input() itemActive: number = -1;
-      
+
     constructor() {}
 
 }
